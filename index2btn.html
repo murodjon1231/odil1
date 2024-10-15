@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <style>
+            .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+    
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      background: lightgray;
+      text-align: center;
+    }
+    
+    .prev-btn, .next-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 2em;
+      padding: 10px;
+      cursor: pointer;
+    }
+    
+    .prev-btn {
+      left: 10px;
+    }
+    
+    .next-btn {
+      right: 10px;
+    }
+    .btn1{
+        background-color: black;
+    color: gold;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 rgba(255, 255, 255, 0.571);
+    text-align: center;
+    }
+        </style>
+    
+    
+        <div class="carousel-container">
+            <div class="carousel">
+              <div class="carousel-item"><iframe width="560" height="315" src="https://www.youtube.com/embed/XZrckLYqdys?si=TESRRIYcz04KD1vI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class="carousel-item"><ifram width="560" height="315" src=<iframe width="560" height="315" src="https://www.youtube.com/embed/buA9XWecaVA?si=nzP8vOsQSpAzOFT7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class="carousel-item"><iframe width="560" height="315" src="https://www.youtube.com/embed/t14GJjzv9uY?si=fZW47X7rxhsyqU4L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            </div>
+            <button class="prev-btn" onclick="prevSlide()">&#10094;</button>
+            <button class="next-btn" onclick="nextSlide()">&#10095;</button>
+          </div>
+          <a style="text-align: center;" href="./index.html"><button  class="btn1">Exit</button></a>
+          <script>
+    let currentSlide = 0;
+    
+    function showSlide(slideIndex) {
+      const carousel = document.querySelector('.carousel');
+      const totalSlides = document.querySelectorAll('.carousel-item').length;
+    
+      if (slideIndex >= totalSlides) currentSlide = 0;
+      if (slideIndex < 0) currentSlide = totalSlides - 1;
+    
+      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    
+    function nextSlide() {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+    
+    function prevSlide() {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+    
+          </script>
+    
+        
+    </body>
+
+</html>
